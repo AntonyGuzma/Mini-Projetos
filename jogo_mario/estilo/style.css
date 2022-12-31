@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aqua;
+}
+
+.game-board{
+      position: relative;
+      width: 80%;
+      height: 500px;
+      border-bottom: 15px solid rgb(8, 126, 8);
+      background: linear-gradient(#87CEEB, #E0F6FF);
+      margin: 0 auto;
+      overflow: hidden; /*atodo elemento que ultrapassar conteudo irá sumir */
+}
+
+.pipe{
+    position: absolute; /*Nenhuma irá interferir no comportamento da outra Lembrando que o elemento pai precisa está com o position relative    */
+    bottom: 0%;
+    width: 80px; 
+    animation: pipe-animation 2s infinite linear;
+}
+
+.mario{
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+}
+
+.jump{
+    animation: jump 500ms;
+
+}
+
+.clouds{
+    position: absolute;
+    width: 500px;
+    animation: nuvem 20s infinite linear;
+}
+
+/*criando uma animação no css com keyframe*/
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+/*Criando Animação de Puoo*/
+@keyframes jump {
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+/*criando animação da nuvem*/
+@keyframes nuvem {
+    from{
+        right: -550px;
+    }
+    to{
+        right: 100%;
+    }
+}
